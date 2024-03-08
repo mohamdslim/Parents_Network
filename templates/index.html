@@ -1,0 +1,248 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'favicon.png' }%" rel="icon" type="image/png">
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+</head>
+
+<body>
+
+            <header>
+                <div class="header_inner">
+                    <div class="left-side">
+                        <!-- Logo -->
+                        <div id="logo" class=" uk-hidden@s">
+                            <a href="home.html">
+                                <b><h1 style="text-transform: uppercase;">Social Book</h1></b>
+                            </a>
+                        </div>
+
+                        <!--<div class="triger" uk-toggle="target: #wrapper ; cls: sidebar-active">
+                            <i class="uil-bars"></i>
+                        </div>-->
+                        <div class="header_search">
+                            <input type="text" placeholder="search for hobby..">
+                            <div class="icon-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="right-side lg:pr-4">
+
+
+
+
+                         <!-- Notification -->
+
+                        <a href="#" class="header-links-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M12 22a2.02 2.02 0 0 1-2.01-2h4a2.02 2.02 0 0 1-.15.78a2.042 2.042 0 0 1-1.44 1.18h-.047A1.922 1.922 0 0 1 12 22zm8-3H4v-2l2-1v-5.5a8.065 8.065 0 0 1 .924-4.06A4.654 4.654 0 0 1 10 4.18V2h4v2.18c2.579.614 4 2.858 4 6.32V16l2 1v2z" fill="currentColor"/></g></svg>
+                        </a>
+                        <div uk-drop="mode: click;offset: 4" class="header_dropdown">
+                            <h4
+                                class="-mt-5 -mx-5 bg-gradient-to-t from-gray-100 to-gray-50 border-b font-bold px-6 py-3">
+                                Notification </h4>
+                            <ul class="dropdown_scrollbar" data-simplebar>
+                                <li>
+                                    <a href="#">
+
+                                        <div class="drop_content">
+                                            <p> <strong class="text-link" >Taiye</strong>
+                                                <span class="text-link"> is   </span>
+                                            </p>
+                                            <span class="time-ago"> 2</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                            <a href="#" class="see-all">See all</a>
+                        </div>
+
+                        <!-- Messages -->
+
+
+
+
+                        <!-- profile -->
+
+                        <a href="#">
+                            <img src="{% static 'assets/images/avatars/avatar-2.jpg' %}" class="header-avatar" alt="">
+                        </a>
+                        <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
+                            <ul>
+                                <li><a href="setting"> Account setting </a> </li>
+                                <li><a href="help"> Help </a> </li>
+                                <li><a href="logout"> Log Out</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <div class="container m-auto">
+
+                <!--<h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mb-5"> Feed </h1>--->
+
+                <div class="lg:flex justify-center lg:space-x-10 lg:space-y-0 space-y-5">
+
+                    <!-- left sidebar-->
+                    <div class="space-y-5 flex-shrink-0 lg:w-7/12">
+
+                        <!-- post 1-->
+                        <div class="bg-white shadow rounded-md  -mx-2 lg:mx-0">
+    
+                            <!-- activity header -->
+                            <div class="flex justify-between items-center px-4 py-3">
+                                <div class="flex flex-1 items-center space-x-4">
+
+                                    <span class="block capitalize font-semibold ">  All Activities </span>
+                                </div>
+                              <div>
+                                Here
+                              </div>
+                            </div>
+                            <div uk-lightbox>
+                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum vel massa at suscipit. Sed sed varius diam. Phasellus dictum ipsum vel tincidunt consequat. Nullam facilisis efficitur libero, non euismod eros efficitur vel. Aliquam ligula mi, lobortis ac ipsum ac, bibendum laoreet quam. Curabitur molestie luctus aliquet. Maecenas tincidunt massa et felis tincidunt dignissim. Sed in sodales tortor, ac rutrum libero.</p>                       </div>
+
+                            <div class="py-3 px-4 space-y-3"> 
+                               
+                                <div class="flex space-x-4 lg:font-bold">
+                                    <a href="#" class="flex items-center space-x-2">
+                                        <div class="p-2 rounded-full text-black">
+                                           Good
+                                        </div>
+                                        
+                                    </a>
+                                    <a href="#" class="flex items-center space-x-2">
+                                        <div class="p-2 rounded-full text-black">
+
+                                        </div>
+                                        
+                                    </a>
+
+                                </div>
+
+
+                                <div class="bg-gray-100 bg-gray-100 rounded-full rounded-md relative ">
+                                    <input type="text" placeholder="Write a Hobby" class="bg-transparent max-h-10 shadow-none">
+                                    <div class="absolute bottom-0 flex h-full items-center right-0 right-3 text-xl space-x-2">
+                                       <a href="#"></i>Save</i>
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                        </div>
+
+                    </div>
+
+                    <!-- right sidebar-->
+                    <div class="lg:w-5/12">
+
+                        <div class="bg-white  shadow-md rounded-md overflow-hidden">
+
+                            <div class="bg-gray-50  border-b border-gray-100 flex items-baseline justify-between py-4 px-6 ">
+                                <h2 class="font-semibold text-lg">My Childrens</h2>
+                            </div>
+                           
+                            <div class="divide-gray-300 divide-gray-50 divide-opacity-50 divide-y px-4 ">
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="flex flex-1 items-center space-x-4">
+                                        <a href="profile.html">
+                                        </a>
+                                        <div class="flex flex-col">
+                                            <span class="block capitalize font-semibold"> tomi_ml </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="#" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 "> See </a>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="flex flex-1 items-center space-x-4">
+                                        <a href="profile.html">
+                                        </a>
+                                        <div class="flex flex-col">
+                                            <span class="block capitalize font-semibold"> taiye </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 "> See </a>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="flex flex-1 items-center space-x-4">
+                                        <a href="profile.html">
+                                        </a>
+                                        <div class="flex flex-col">
+                                            <span class="block capitalize font-semibold"> kayode </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 "> See </a>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <div class="flex flex-1 items-center space-x-4">
+                                        <a href="profile.html">
+                                        </a>
+                                        <div class="flex flex-col">
+                                            <span class="block capitalize font-semibold"> faith_do </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="#" class="border border-gray-200 font-semibold px-4 py-1 rounded-full hover:bg-pink-600 hover:text-white hover:border-pink-600 "> See </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                      
+
+                    </div>
+
+                </div>               
+          
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+ <!-- Scripts
+    ================================================== -->
+    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/uikit.js' %}"></script>
+    <script src="{% static 'assets/js/simplebar.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+    <script src="{% static '../../unpkg.com/ionicons%405.2.3/dist/ionicons.js' %}"></script>
+</body>
+
+
+</html>
