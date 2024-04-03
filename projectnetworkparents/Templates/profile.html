@@ -1,0 +1,65 @@
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+My Profile
+{% endblock title %}
+{% block navbar %}
+{%  include 'navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+
+
+<div class="row" style="margin-top:2%;">
+
+    <div class="col-md-3" style="margin-left:4%; text-align: center;">
+        <div class="card card-body" style="border-radius:25px;">
+            <img class="img-fluid img-thumbnail"  src="{{request.user.profile_pic.url}}" >
+
+            <h3 >{{request.user.first_name}} {{request.user.last_name}}</h3>
+            <a href="#"><h4 >@{{request.user.username}}</h4></a>
+            <p>{{request.user.bio}}</p>
+
+            <a href="{% url 'account-settings' %}"> <h6>Account Settings</h6> </a>
+        </div>
+    </div>
+
+{% if user.is_superuser %}
+
+
+  <div class="col-md-8" >
+        <div class="card card-body"style="border-radius:25px; min-height:100%;">
+            <button  type="button" class="btn btn-outline-dark" style="margin-left: 2%;"> <a href="{% url 'addParent'%}"><h3>Add/Remove Parents</h3></a></button>
+            <br><br>
+            <button type="button" class="btn btn-outline-dark" style="margin-left: 2%;"> <h3>  Manage Schedule</h3> </button>
+                        <br><br>
+
+            <button type="button" class="btn btn-outline-dark" style="margin-left: 2%;"> <h3>  Contact Parents</h3> </button>
+                        <br><br>
+
+        </div>
+
+
+    </div>
+
+    {% else %}
+
+    <div class="col-md-8" >
+        <div class="card card-body"style="border-radius:25px; min-height:100%;">
+            <button  type="button" class="btn btn-outline-dark" style="margin-left: 2%;"> <h3>  Study</h3> </button>
+            <br><br>
+            <button type="button" class="btn btn-outline-dark" style="margin-left: 2%;"> <h3>  Health</h3> </button>
+                        <br><br>
+
+            <button type="button" class="btn btn-outline-dark" style="margin-left: 2%;"> <a href="{% url 'toDoList' %}"><h3>  Notice </h3> </a></button>
+                        <br><br>
+
+        </div>
+
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock content %}
