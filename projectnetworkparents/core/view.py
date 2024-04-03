@@ -55,3 +55,43 @@ def profile(request):
 
 
 @method_decorator(login_required(login_url='login'),name='dispatch')
+class AccountSettingsView(UpdateView):
+    model = User
+    fields = ['first_name','last_name','profile_pic','bio']
+    template_name = 'account_settings.html'
+    success_url = '/profile/'
+
+    def get_object(self, queryset=None):
+        return self.request.user
+    
+
+def addParent(request):
+    user = User.objects.filter(is_superuser=False)
+
+    if request.method == 'POST':
+        form = UserForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.save(commit=False)
+            password = form.cleaned_data['password']
+            user.set_password(password)
+            user.save()
+            messages.success(request, 'Parent Added Successfully')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Please Fill the Form Correctly')
+    else:
+        form = UserForm()
+    context = {'user':user, 'form': form}
+    return render(request, 'addParent.html', context)
+
+
+def deleteParent(request, pk):
+    user = User.objects.get(id=pk)
+    user.delete()
+    return redirect('addParent')
+
+def toDoList(request):
+    user = request.user
+    tasks = Task.objects.filter(user=user)
+    context = {'tasks': tasks}
+    return render(request, 'toDoList.html', context)
