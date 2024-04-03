@@ -95,3 +95,11 @@ def toDoList(request):
     tasks = Task.objects.filter(user=user)
     context = {'tasks': tasks}
     return render(request, 'toDoList.html', context)
+
+
+
+
+
+def contact_admin(request):
+
+    return render(request, 'contact_admin.html')
