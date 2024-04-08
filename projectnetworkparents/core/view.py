@@ -96,7 +96,31 @@ def toDoList(request):
     context = {'tasks': tasks}
     return render(request, 'toDoList.html', context)
 
+def show_parent_schedule(request, pk):
+    objs = Schedule.objects.filter(parent__id = pk)
+    return render(request, 'schedule.html', {"objs": objs})
 
+
+def all_schedule(request):
+    user = User.objects.filter(is_superuser=False)
+    context = {'user':user}
+    return render(request, 'all_schedule.html', context)
+
+
+def edit_schedule(request, pk):
+    schedule_instance = Schedule.objects.get(id=pk)
+    parent_id = schedule_instance.parent.id
+    
+    if request.method == "POST":
+        form = ScheduleForm(request.POST, instance=schedule_instance)
+        if form.is_valid():
+            form.save()
+            return redirect(manage_parent_schedule, pk=parent_id)
+    else:
+        form = ScheduleForm(instance=schedule_instance)
+
+    context = {'form': form}
+    return render(request, 'edit_schedule.html', context)
 
 
 
