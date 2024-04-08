@@ -109,6 +109,11 @@ def addTask(request):
     context = {'form': form}
     return render(request, 'toDoList.html', context)
 
+def deleteTask(request, pk):
+    task = Task.objects.get(id=pk)
+    task.delete()
+    return redirect('toDoList')
+
 
 def show_parent_schedule(request, pk):
     objs = Schedule.objects.filter(parent__id = pk)
