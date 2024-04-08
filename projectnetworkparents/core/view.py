@@ -96,6 +96,20 @@ def toDoList(request):
     context = {'tasks': tasks}
     return render(request, 'toDoList.html', context)
 
+def addTask(request):
+    user = request.user
+    if request.method == 'POST':
+        form = TaskForm(request.POST, user=user)
+        if form.is_valid():
+            form.save()
+            return redirect('toDoList')  # Redirect to the toDoList view
+    else:
+        form = TaskForm(user=user)
+
+    context = {'form': form}
+    return render(request, 'toDoList.html', context)
+
+
 def show_parent_schedule(request, pk):
     objs = Schedule.objects.filter(parent__id = pk)
     return render(request, 'schedule.html', {"objs": objs})
@@ -121,6 +135,18 @@ def edit_schedule(request, pk):
 
     context = {'form': form}
     return render(request, 'edit_schedule.html', context)
+
+def manage_parent_schedule(request, pk):
+    parent_schedule = Schedule.objects.filter(parent__id = pk)
+    user = User.objects.filter(is_superuser=False)
+    context = {'user':user, 'parent_schedule': parent_schedule}
+    return render(request, 'manage_parent_schedule.html', context)
+
+
+def contact_parent(request):
+    user = User.objects.filter(is_superuser=False)
+    context = {'user':user}
+    return render(request, 'contact.html', context)
 
 
 
