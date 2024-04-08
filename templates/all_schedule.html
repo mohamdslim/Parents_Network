@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Manage Schedule
+{% endblock title %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<div class="container">    
+    <div class="box2">
+        <h2>Parents</h2>
+        <br>
+        {% for u in user %}
+        <ul id="list-container">
+            <li>
+                {{ u.username }}
+                <a style="display: flex; float: right;" href="{% url 'manage_parent_schedule' u.id %}">Manage Schedule</i></a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
