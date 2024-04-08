@@ -10,4 +10,7 @@ urlpatterns = [
  path('show_parent_schedule/<int:pk>', show_parent_schedule, name="show_parent_schedule"),
  path('all_schedule/', all_schedule, name="all_schedule"),
  path('manage_parent_schedule/<int:pk>/', manage_parent_schedule, name="manage_parent_schedule"),
+ path('add_task/', views.addTask, name='add_task'),
+ path('contact_parent/', contact_parent, name="contact_parent"),
+ path('contact_admin/', contact_admin, name="contact_admin"),
 ]
