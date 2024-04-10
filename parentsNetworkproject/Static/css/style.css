@@ -1,1 +1,151 @@
+.box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    justify-content: center;
+}
 
+.box1 {
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    padding: 40px 30px 70px;
+    border-radius: 13px;
+    display: inline-block;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee9e9;
+}
+.box3 {
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    padding: 40px 30px 70px;
+    border-radius: 13px;
+    display: inline-block;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee9e9;
+}
+
+.box2 {
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #eee9e9;
+    border-radius: 13px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.list-container {
+    background-color: rgb(3, 3, 3);
+}
+
+.box2 ul {
+    list-style-type: none;
+    padding: 15px;
+    background-color: #e3e7eb;
+    border-radius: 10px;
+}
+
+.box2 li i {     
+    padding: 3.5px;
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+    float: right;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+/* Style for form inputs */
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for form select fields */
+.form-field select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-field label{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+
+
+
+.toDoList {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-top: 20px;
+    border-radius: 13px;
+}
+
+.toDoList h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.toDoList ul {
+    list-style-type: none;
+    padding: 10px;
+    background-color: #e3e7eb;
+    border-radius: 10%;
+}
+
+/* Styling the delete icon */
+.toDoList .fas.fa-times {
+    color: red;
+    padding: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+    float: right;
+    margin-right: 15px
+}
+
+/* Adding hover effect on delete icon */
+.toDoList .fas.fa-times:hover {
+    color: darkred;
+}
+
+.task-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-input {
+    width: 78%
+}
+
+.task-button {
+    width: 20%;
+    border-radius: 10px;
+    border: none;
+}
