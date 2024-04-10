@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Manage Schedule
+{% endblock title %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<div class="box">
+    {% if parent_schedule %}
+    <div class="box3">
+        <h2>Parent Schedule</h2>
+        <div style="overflow-x: auto;">
+            <table>
+                <tr>
+                    <th>Week</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+            </tr>
+                {% for obj in parent_schedule %}
+                    {% if obj.week_days == 'Monday' %}
+                        <td>{{obj.week}}</td>
+                    {% endif %}
+
+                    <td>{{obj.type}}<br>
+                        {{ obj.task }}<br>
+                        {{ obj.duration }}<br>
+                        <a href="{% url 'edit_schedule' obj.id %}"><i class="fas fa-pencil-alt"></i></a>
+
+                    </td>
+                    {% if obj.week_days == 'Saturday' %}
+                        </tr><tr> 
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock content %}

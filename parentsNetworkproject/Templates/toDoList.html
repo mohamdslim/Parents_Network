@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+My Profile
+{% endblock title %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+{% load static %}
+{% block content %}
+<div class="toDoList">
+    <h2>Notice</h2>
+    <br>
+    <form method="post" action="{% url 'add_task' %}" class="toDoForm">
+        {% csrf_token %}
+        <div class="task-form">
+            <input type="text" id="task" name="text" class="task-input">
+            <button type="submit" class="task-button">Add Task</button>
+        </div>
+    </form>
+    <br>
+    {% for task in tasks %}
+    <ul>
+        <li>
+            {{task.text}}
+            <a href="{% url 'delete_task' task.id%}"><i class="fas fa-times"></i></a>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock content %}

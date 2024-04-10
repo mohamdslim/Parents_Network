@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add/Remove Parents
+{% endblock title %}
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+<style>
+    
+</style>
+<div class="box">
+    
+    <div class="box2">
+        <h2>Contact Parents</h2>
+        <br>
+        {% for u in user %}
+        <ul id="list-container">
+            <li>
+                {{ u.username }}
+                <a style="display: flex; float: right;" href="mailto:{{u.email}}">Contact Parent</a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
